@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <head>
 <script type="text/javascript" src="../scripts/main.js"></script>
+<script type="text/javascript" src="../scripts//bower/jquery/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="../styles/main.css"></link>
 </head>
 <body>
-<div class="header">
-</div>
-<div class="body">
-</div>
-<div class="footer">
-</div>
+	<div class="header">
+		<form class="domain-form">
+			<input type="text">
+			<input type="submit">
+			<input id="click" type="button">
+		</form>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#click").click(function(){
+					$(".header").toggleClass("div-shrink");
+					$(".footer").toggleClass("div-shrink");
+				})
+			})
+		</script>
+
+	</div>
+	<div class="body">
+	</div>
+	<div class="footer">
+	</div>
 </body>
 </html>

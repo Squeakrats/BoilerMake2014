@@ -1,11 +1,5 @@
-.test{ 
-	$ga:100;       
-}   
-.wut{
-	$ey:100;
-	width:100px;  
-}
-
 @import "reset";
 @import "header";
-
+@import "body";
+@import "footer";
+@import "helperclasses";
