@@ -1,2 +1,2 @@
 console.log('asdadasd');
-console.log(Math.random());	
+console.log(Math.random());    	 
