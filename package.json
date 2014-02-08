@@ -1,0 +1,22 @@
+{
+  "name": "BoilerMake",
+  "version": "0.0.0",
+  "description": "BOOILLLERRRR MAKKKEE",
+  "main": "index.js",
+  "scripts": {
+    "test": "uwrknm8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "to come"
+  },
+  "author": "Alex Sohail, Yusef Sohai, Matt Neil",
+  "license": "BSD",
+  "dependencies": {
+    "express": "~3.4.8"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-watch": "~0.5.3"
+  }
+}

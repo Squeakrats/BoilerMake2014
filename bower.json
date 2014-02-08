@@ -1,0 +1,22 @@
+{
+  "name": "BoilerMake",
+  "version": "0.0.0",
+  "description": "BOIILLERMAAAKEE",
+  "authors": [
+    "Alex Sohail",
+    "Yusef Sohail",
+    "Matt Neil"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angularjs": "*"
+  }
+}
