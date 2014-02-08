@@ -1,29 +1,49 @@
 <!DOCTYPE html>
 <head>
-<script type="text/javascript" src="../scripts/main.js"></script>
 <script type="text/javascript" src="../scripts//bower/jquery/jquery.min.js"></script>
-<link rel="stylesheet" type="text/css" href="../styles/main.css"></link>
+<script type="text/javascript" src="../scripts//bower/d3/d3.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../styles/main.css">
+<link href='http://fonts.googleapis.com/css?family=Exo+2:400,700,300' rel='stylesheet' type='text/css'>
 </head>
 <body>
 	<div class="header">
-		<form class="domain-form">
-			<input type="text">
-			<input type="submit">
-			<input id="click" type="button">
-		</form>
-		<script type="text/javascript">
-			$(document).ready(function(){
-				$("#click").click(function(){
-					$(".header").toggleClass("div-shrink");
-					$(".footer").toggleClass("div-shrink");
+		<div class="header-content wrapper">
+			<h1 class="title">#HackCity</h1>
+			<form class="domain-form cf">
+				<input class="input-text" type="text" placeholder="Enter URL...">
+				<input id="click" class="button" type="button" value="Hack">
+			</form>
+			<script type="text/javascript">
+				$(document).ready(function(){
+					$("#click").click(function(){
+						$(".header").toggleClass("div-shrink");
+						$(".footer").toggleClass("div-shrink");
+						$(".content").toggleClass("show-content");
+					})
 				})
-			})
-		</script>
-
+			</script>
+		</div>
 	</div>
-	<div class="body">
+	<div class="content">
+		<div class="data-tree wrapper"></div>
 	</div>
 	<div class="footer">
+		<div class="row cf wrapper">
+			<div class="col">
+				<h2>1 - Heading</h2>
+				<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+			</div>
+			<div class="col">
+				<h2>2 - Heading</h2>
+				<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+			</div>
+			<div class="col">
+				<h2>3 - Heading</h2>
+				<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+			</div>
+		</div>
+		<p class="copyright">&copy; 2014 Overlord Yusef and Team
 	</div>
+	<script type="text/javascript" src="../scripts/main.js"></script>
 </body>
 </html>

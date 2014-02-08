@@ -1,3 +1,17 @@
 .div-shrink{
-	height: 50px;
+	height: 74px;
+	//overflow: hidden;
+}
+.wrapper{
+	max-width: 1200px;
+}
+.cf:before, .cf:after{
+	content: " ";
+	display: table;
+}
+.cf:after{
+	clear: both;
+}
+.cf{
+	*zoom: 1;
 }

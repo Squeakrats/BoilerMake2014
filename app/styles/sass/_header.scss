@@ -1,9 +1,75 @@
 .header{
 	width: 100%;
-	height: 50%;
-	background: #fff;
-	box-shadow: 0px 3px 5px 6px #999;
-	position: absolute;
-	top: 0;
-	transition: height 1s ease;
+	min-width: 768px;
+	background: $bm-red;
+	height: 314px;
+	z-index: 10;
+	text-align: center;
+	transition: all 1s ease;
+	position: relative;
+	&.div-shrink{
+		box-shadow: 0px 8px 16px rgba(0,0,0,0.3);
+	}
 } 
+.header-content{
+	margin: 0 auto;
+	width: 100%;
+	height: 266px;
+	text-align: center;
+	padding: 24px 0;
+	padding-bottom: 0;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+.title{
+	font-size: 5em;
+	width: 33.33333333%;
+	margin: 48px auto;
+	height: 96px;
+}
+.domain-form{
+	margin: 0 auto;
+	width: 100%;
+	text-align: center;
+	height: 50px;
+	padding: 12px 0;
+	background: $bm-red;
+	position: relative;
+	input.button{
+		background: #000;
+		height: 50px;
+		width: 75px;
+		line-height: 50px;
+		border-radius: 5px;
+		padding: 0 10px;
+		color: $bm-white;
+		text-transform: uppercase;
+		border: none;
+		font-weight: 700;
+		font-family: $headline;
+		&:hover{
+			background: $bm-blue;
+		}
+		&:focus{
+			outline: 0;
+		}
+	}
+	input.input-text{
+		border: none;
+		height: 50px;
+		border-radius: 5px;
+		padding: 0 10px;
+		width: calc(33.333333% - 100px);
+		&:focus{
+			outline: 0;
+		}
+	}
+}
+.div-shrink .domain-form{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
