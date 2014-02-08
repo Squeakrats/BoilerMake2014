@@ -2,7 +2,7 @@ module.exports = function (grunt) {
   grunt.initConfig({
   	watch : {
   		all : {
-  			files : ["**/**/*.js","**/**/*.html"],
+  			files : ["**/**/*.js","**/**/*.html","**/**/*.css"],
   			options : {livereload:true}
   		}
   	}
