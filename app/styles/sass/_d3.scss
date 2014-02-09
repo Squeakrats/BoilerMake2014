@@ -1,5 +1,14 @@
 .node {
   cursor: pointer;
+  &:hover{
+    circle{
+      fill: $bm-red;
+    }
+    text{
+      display: block;
+    }
+    
+  }
 }
 
 .node circle {
@@ -7,9 +16,10 @@
   stroke: steelblue;
   stroke-width: 1.5px;
 }
-
 .node text {
-  font: 18px sans-serif;
+  display: none;
+  font: 18px 'Exo 2', sans-serif;
+  font-weight: 700;
 }
 
 .link {
@@ -17,8 +27,11 @@
   stroke: $bm-red;
   stroke-width: 1.5px;
 }
- 
+.opac-hov{
+  fill-opacity: 0.2;
+  stroke-opacity: 0.2;
+}
 svg{
-	border:1px solid #FF0000;
-	background-color:#000000;
+	display: inline-block;
+  vertical-align: middle;
 }

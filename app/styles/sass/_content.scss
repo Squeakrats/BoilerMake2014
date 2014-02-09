@@ -4,17 +4,33 @@
 	height: 0;
 	min-width: 768px;
 	position: relative;
-	&:before{
-		content: '';
-		display: inline-block;
-		height: 100%;
-		vertical-align: middle;
-	}
 	&.show-content{
 		height: calc(100% - 148px);
 		.data-tree{
 			display: inline-block;
 		}
+	}
+}
+a.download-link{
+	background: #000;
+	position: absolute;
+	margin: 0 auto;
+	left: 0;
+	text-decoration: none;
+	top: 24px;
+	height: 50px;
+	line-height: 50px;
+	border-radius: 5px;
+	padding: 0 10px;
+	color: $bm-white;
+	text-transform: uppercase;
+	border: none;
+	font-weight: 700;
+	font-family: $headline;
+	display: inline-block;
+	width: auto;
+	&:hover{
+		background: $bm-red;
 	}
 }
 .data-tree{
@@ -28,8 +44,13 @@
 	margin: 0 auto;
 	left: 0;
 	right: 0;
-	top: 74px;
 	height: 100%;
+	&:before{
+		content: '';
+		display: inline-block;
+		height: 100%;
+		vertical-align: middle;
+	}
 	/*&.show-content:after, &.show-content:before {
 		content: "";
 		display: block;
