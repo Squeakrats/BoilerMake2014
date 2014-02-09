@@ -171,13 +171,26 @@ var requestSite = function(){
 
     }
 
-    setTimeout(function(){
-      var content = zip.generate();
-      location.href="data:application/zip;base64,"+content;
 
+    //var content = zip.generate();
+      //location.href="data:application/zip;base64,"+content;
 
-    },  4000)
-  
+ // document.getElementById('data_uri').href = "data:application/zip;base64," + zip.generate();
+
+  // Blob
+  var blobLink = document.createElement("a");
+  try {
+    blobLink.download = "hello.zip";
+    blobLink.href = window.URL.createObjectURL(zip.generate({type:"blob"}));
+    blobLink.innerHTML = "asdASDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD"
+
+    console.log('adsasd')
+  } catch(e) {
+    blobLink.innerHTML += " (not supported on this browser)";
+    console.log("awww")
+  }
+    $(".data-tree").append(blobLink)
+>>>>>>> 1bd57611d684a7e517af277dc0906d940ecc745b
 
   })
   socket.on('reply:structure:update' , function (data){
