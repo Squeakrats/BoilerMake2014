@@ -171,11 +171,13 @@ var requestSite = function(){
 
     }
 
-    var content = zip.generate();
+    setTimeout(function(){
+      var content = zip.generate();
       location.href="data:application/zip;base64,"+content;
 
 
-
+    },  4000)
+  
 
   })
   socket.on('reply:structure:update' , function (data){
