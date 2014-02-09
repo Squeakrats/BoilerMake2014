@@ -2,7 +2,7 @@ var TEST_URL = "http://www.learnyouahaskell.com";
 
 var socket = {}
 var requested = false;
-var root = {}; //the d3 root vis
+var root = {name : "site", children :[]}; //the d3 root vis
 //
 var requestSite = function(){
   //prevent accidentally requesting multiple times.
@@ -42,7 +42,7 @@ var requestSite = function(){
 
        findHome(data)
        //console.log(root)
-       console.log("pre")
+       console.log(data)
        updateVis(root)
       //update(root)
   // update(root)
@@ -62,7 +62,13 @@ $.getJSON(addthese.json, function(addTheseJSON) {
 
 //Finds the appropriate place in the tree for a node
 function findHome(data){
+  root.children.push({
+    name : JSON.stringify(data.name),
+    children : []
+  })
 //If this is the node doesn't have a referrer, its a root node
+//
+/*
   if(!data.referrer){
     root.name = data.name
     root.children = [] // {name:data.name,children:[]}
@@ -79,7 +85,7 @@ function findHome(data){
       })
     }
    // console.log(root)
-  }
+  }*/
 }
 
 function findParentNode(referrer, node){
