@@ -1,18 +1,18 @@
 
-var diameter = 960;
+var diameter = window.innerHeight - 148;
 
 var tree = d3.layout.tree()
-    .size([360, diameter / 2 - 120])
+    .size([360, diameter / 2 - 60])
     .separation(function(a, b) { return (a.parent == b.parent ? 1 : 2) / a.depth; });
 
 var diagonal = d3.svg.diagonal.radial()
     .projection(function(d) { return [d.y, d.x / 180 * Math.PI]; });
-
+var width = $(".data-tree").width();
 var svg = d3.select(".data-tree").append("svg")
-    .attr("width", diameter)
-    .attr("height", diameter - 150)
+    .attr("width", width)
+    .attr("height", diameter - 48)
   .append("g")
-    .attr("transform", "translate(" + diameter / 2 + "," + diameter / 2 + ")");
+    .attr("transform", "translate(" + width / 2 + "," + diameter / 2 + ")");
 
 
 function updateVis(JSON){
@@ -40,8 +40,8 @@ function updateVis(JSON){
 
   node.append("text")
       .attr("dy", ".31em")
-      .attr("text-anchor", function(d) { return d.x < 180 ? "start" : "end"; })
-      .attr("transform", function(d) { return d.x < 180 ? "translate(8)" : "rotate(180)translate(-8)"; })
+      .attr("text-anchor", function(d) { return d.x < 180 ? "end" : "start"; })
+      .attr("transform", function(d) { return d.x < 180 ? "rotate("+(360-d.x+90)+")translate("+(width/2 - d.x - 180)+")" : "rotate("+(180-d.x-90)+")translate(-"+(width/2 - d.x)+")"; })
       .text(function(d) { return d.name; });
 //});
 
