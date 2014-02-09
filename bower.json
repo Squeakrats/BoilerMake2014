@@ -19,6 +19,7 @@
   "dependencies": {
     "angular": "~1.2.12",
     "d3": "~3.4.1",
-    "jquery": "~2.1.0"
+    "jquery": "~2.1.0",
+    "jszip": "~2.0.0"
   }
 }

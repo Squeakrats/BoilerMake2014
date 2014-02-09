@@ -383,7 +383,7 @@ th {
 
 .title {
   font-size: 5em;
-  width: 33.33333333%;
+  width: 70.33333333%;
   margin: 48px auto;
   height: 96px; }
 
@@ -530,12 +530,16 @@ th {
   stroke-width: 1.5px; }
 
 .node text {
-  font: 10px sans-serif; }
+  font: 18px sans-serif; }
 
 .link {
   fill: none;
   stroke: #a6291c;
   stroke-width: 1.5px; }
+
+svg {
+  border: 1px solid #FF0000;
+  background-color: #000000; }
 
 .div-shrink {
   height: 74px; }
