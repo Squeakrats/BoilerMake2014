@@ -42,7 +42,7 @@ function updateVis(JSON){
       .attr("dy", ".31em")
       .attr("text-anchor", function(d) { return d.x < 180 ? "end" : "start"; })
       .attr("transform", function(d) { return d.x < 180 ? "rotate("+(360-d.x+90)+")translate("+(width/2 - d.x - 180)+")" : "rotate("+(180-d.x-90)+")translate(-"+(width/2 - d.x)+")"; })
-      .text(function(d) { return d.name; });
+      .text(function(d) { return d.name.replace(requestedurl,'') });
 //});
 
 

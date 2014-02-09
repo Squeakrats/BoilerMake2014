@@ -14,21 +14,12 @@
 <body>
 	<div class="header">
 		<div class="header-content wrapper">
-			<h1 class="title">#HackCity</h1>
+			<h1 class="title">ZipItShipIt</h1>
 			<form class="domain-form cf">
-				<input class="input-text" type="text" placeholder="Enter URL...">
-				<input id="click" class="button" type="button" value="Hack">
+				<input class="input-text" type="text" id = "urlInput">
+				<input id="click" class="button" type="button" value="Download">
 			</form>
-			<script type="text/javascript">
-				$(document).ready(function(){
-					$("#click").click(function(){
-						$(".header").toggleClass("div-shrink");
-						$(".footer").toggleClass("div-shrink");
-						$(".content").toggleClass("show-content");
-						requestSite();
-					})
-				})
-			</script>
+			<div class = "emailBtn"> </div>
 		</div>
 	</div>
 	<div class="content">
@@ -38,19 +29,19 @@
 	<div class="footer">
 		<div class="row cf wrapper">
 			<div class="col">
-				<h2>1. Enter a site to download</h2>
+				<h2>1. Enter a site to download.</h2>
 				<p></p>
 			</div>
 			<div class="col">
-				<h2>2. We'll pack it up for you. </h2>
+				<h2>2. We'll pack it up.</h2>
 				<p></p>
 			</div>
 			<div class="col">
-				<h2>3. We'll give you a zip!</h2>
+				<h2>3. We'll give it to you!</h2>
 				<p></p>
 			</div>
 		</div>
-		<p class="copyright">&copy; 2014 Overlord Yusef and Team
+		<p class="copyright">&copy; 2014 Yusef, Matt, and Alex. BoilerMake2014
 	</div>
 
 <script type="text/javascript" src="../scripts/main.js">                   </script>

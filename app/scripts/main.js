@@ -1,74 +1,82 @@
-var TEST_URL = "http://www.learnyouahaskell.com";
+var testurl = "http://www.learnyouahaskell.com";
+var requestedurl = "";
+
+function validateURL(textval) {
+  var urlregex = new RegExp(
+    "^(http|https|ftp)\://([a-zA-Z0-9\.\-]+(\:[a-zA-Z0-9\.&amp;%\$\-]+)*@)*((25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9])\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[0-9])|([a-zA-Z0-9\-]+\.)*[a-zA-Z0-9\-]+\.(com|edu|gov|int|mil|net|org|biz|arpa|info|name|pro|aero|coop|museum|[a-zA-Z]{2}))(\:[0-9]+)*(/($|[a-zA-Z0-9\.\,\?\'\\\+&amp;%\$#\=~_\-]+))*$");
+  return urlregex.test(textval);
+}
+
+$(document).ready(function(){
+
+$("#urlInput").val("Enter a URL to download...")
+$("#urlInput").click(function(){
+  $("#urlInput").val('')
+});
+
+  $("#click").click(function(){
+    var url  = $("#urlInput").val();
+
+    $(".header").addClass("div-shrink");
+    $(".footer").addClass("div-shrink");
+    $(".content").addClass("show-content");
+    $("#click").attr("value", "Downloading");
+    $("#click").attr("opacity", ".5")
+    $("#urlInput").val("Enter your email address");
+    $("#urlInput").focus(function(){
+         $("#urlInput").val("");
+    })   
+    //valid
+    if(validateURL(url)){
+      requestedurl = url;
+      requestSite(url);
+    }//invalid
+    else{
+       requestedurl = testurl;
+       requestSite(testurl);
+    }
+  })
+})
 
 var socket = {}
 var requested = false;
 var root = {name : "site", children :[]}; //the d3 root vis
 //
-var requestSite = function(){
+var requestSite = function(link){
   //prevent accidentally requesting multiple times.
   if(!requested){
     requested = true;
     socket = io.connect('ws://localhost:1338')
     socket.on('connect', function () {
-      socket.emit('get:structure:init', { url:TEST_URL })
+      socket.emit('get:structure:init', { url: link })
   })
   socket.on('complete', function(data){
-    console.log("Data complete from server")
-    var zip  = new JSZip()
-    console.log(data)
-    for(var i=0;i<data.length;i++){
-        var value = data[i]
-         if(value.resourceText){
-           zip.file(value.path, value.resourceText) 
-          }
-    }
+    $("#click").attr("value", "Email it to me!");
 
-  //var content = zip.generate();
-  //location.href="data:application/zip;base64,"+content;
-  //document.getElementById('data_uri').href = "data:application/zip;base64," + zip.generate();
-  // Blob
-  var blobLink = document.createElement("a");
-  try {
-    blobLink.download = "hello.zip";
-    blobLink.href = window.URL.createObjectURL(zip.generate({type:"blob"}));
-    blobLink.innerHTML = "Click to Download!"
-  } catch(e) {
-    blobLink.innerHTML += " (not supported on this browser)";
-    console.log("awww")
-  }
-    $(".footer").append(blobLink)
-  })
+  //ask for the zip folder
+    $("#click").click(function(){
+
+    });
+
   socket.on('reply:structure:update' , function (data){
-
        findHome(data)
        //console.log(root)
        console.log(data)
        updateVis(root)
       //update(root)
-  // update(root)
-   /*
-
-$.getJSON(addthese.json, function(addTheseJSON) {
-    var newnodes = tree.nodes(addTheseJSON.children).reverse();
-    d.children = newnodes[0];
-    update(d);
-});
-
-   */
-
   })
 }
 }
 
 //Finds the appropriate place in the tree for a node
 function findHome(data){
+  /*
   root.children.push({
     name : JSON.stringify(data.name),
     children : []
-  })
+  })*/
 //If this is the node doesn't have a referrer, its a root node
-//
-/*
+
   if(!data.referrer){
     root.name = data.name
     root.children = [] // {name:data.name,children:[]}
@@ -85,7 +93,7 @@ function findHome(data){
       })
     }
    // console.log(root)
-  }*/
+  }
 }
 
 function findParentNode(referrer, node){

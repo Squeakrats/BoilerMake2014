@@ -18,7 +18,8 @@
     "grunt-contrib-livereload": "~0.1.2",
     "socket.io": "~0.9.16",
     "simplecrawler": "~0.3.6",
-    "zip-archiver": "0.0.4"
+    "zip-archiver": "0.0.4",
+    "sendgrid": "~1.0.0-rc.1.0"
   },
   "devDependencies": {
     "grunt": "~0.4.2",

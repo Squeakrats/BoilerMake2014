@@ -360,7 +360,7 @@ th {
 .header {
   width: 100%;
   min-width: 768px;
-  background: #eeeeee;
+  background: #3f92d2;
   height: 314px;
   z-index: 10;
   text-align: center;
@@ -393,12 +393,11 @@ th {
   text-align: center;
   height: 50px;
   padding: 12px 0;
-  background: #eeeeee;
+  background: #3f92d2;
   position: relative; }
   .domain-form input.button {
     background: #000;
     height: 50px;
-    width: 75px;
     line-height: 50px;
     border-radius: 5px;
     padding: 0 10px;
@@ -425,6 +424,19 @@ th {
   bottom: 0;
   left: 0;
   right: 0; }
+
+.emailBtn {
+  float: left;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #f00000;
+  background-image: url("/img/email.png"); }
+
+html {
+  color: white; }
+
+input {
+  color: black; }
 
 .content {
   text-align: center;
@@ -498,7 +510,7 @@ a.download-link {
   min-width: 768px;
   height: calc(100% - 314px);
   min-height: 314px;
-  background: #eeeeee;
+  background: #3f92d2;
   z-index: 10;
   transition: all 1s ease;
   text-align: center;
